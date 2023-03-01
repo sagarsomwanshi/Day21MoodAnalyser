@@ -1,7 +1,7 @@
 package org.example;
 
 public class MoodAnalyser {
-    String  mood;
+    private String  mood;
 
     public MoodAnalyser() {
     }
@@ -10,12 +10,20 @@ public class MoodAnalyser {
         this.mood = mood;
     }
     public String analyseMood(){
-        if(mood.contains("SAD")){
-            return "SAD";
-        }else {
+        try {
+            if(mood.contains("SAD")) {
+                return "SAD";
+            }
+            if(mood.contains("HAPPY")){
+                return "HAPPY";
+            }
+            if(mood.length() == 0){
+                throw new NullPointerException("HAPPY");
+            }
+        }catch (NullPointerException e){
             return "HAPPY";
         }
-
+        return "Invalid Mood";
     }
 
 }
