@@ -7,12 +7,12 @@ import static org.junit.Assert.*;
 public class MoodAnalyserTest {
     @Test
     public void MoodIsSad(){
-        MoodAnalyser mood = new MoodAnalyser();
-        assertEquals("SAD", mood.analyseMood("I am SAD"));
+        MoodAnalyser mood = new MoodAnalyser("I am SAD");
+        assertEquals("SAD", mood.analyseMood());
     }
     @Test
     public void MoodIsHappy(){
-        MoodAnalyser mood = new MoodAnalyser();
-        assertEquals("HAPPY", mood.analyseMood("I am in Any mood"));
+        MoodAnalyser mood = new MoodAnalyser("I am in Any mood");
+        assertEquals("HAPPY", mood.analyseMood());
     }
 }
