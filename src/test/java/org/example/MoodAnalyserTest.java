@@ -20,4 +20,20 @@ public class MoodAnalyserTest {
         MoodAnalyser mood = new MoodAnalyser(null);
         assertEquals("HAPPY", mood.analyseMood());
     }
+
+
+
+
+    @Test
+    public void testCustomExceptionForNull() throws MoodAnalyserException{
+        MoodAnalyser CustomException = new MoodAnalyser(null);
+        String mood = CustomException.analyseMood();
+        assertEquals(null, mood);
+    }
+    @Test
+    public void testCustomExceptionDForEmpty() throws MoodAnalyserException{
+        MoodAnalyser CustomException = new MoodAnalyser("");
+        String mood = CustomException.analyseMood();
+        assertEquals("", mood);
+    }
 }
