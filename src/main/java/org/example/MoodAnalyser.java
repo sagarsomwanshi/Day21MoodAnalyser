@@ -12,16 +12,16 @@ public class MoodAnalyser {
     public String analyseMood(){
         try {
             if(mood.contains("SAD")) {
-                return "SAD";
+                return "mood is Sad";
             }
             if(mood.contains("HAPPY")){
-                return "HAPPY";
+                return "Mood is Happy";
             }
             if(mood.length() == 0){
-                throw new NullPointerException("HAPPY");
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.EMPTY,"Please Enter Mood");
             }
         }catch (NullPointerException e){
-            return "HAPPY";
+            throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NULL,"Mood cannot be Null");
         }
         return "Invalid Mood";
     }
